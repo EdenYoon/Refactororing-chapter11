@@ -28,7 +28,8 @@ function alertForMiscreant (people) {
 }
 
 function callerAlertForMiscreant (people) {
-  const found = alertForMiscreant(people);
+  const found = findMiscreant(people);
+  alertForMiscreant(people);
   return found;
 }
 
