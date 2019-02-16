@@ -12,6 +12,7 @@ describe('delivery_date_test', async function() {
       }
     };
 
+    assert.equal(callerDeliveryDate(order, true), 4);
     assert.equal(callerDeliveryDate(order, false), 6);
   });
 
@@ -23,17 +24,19 @@ describe('delivery_date_test', async function() {
       }
     };
 
+    assert.equal(callerDeliveryDate(order, true), 2);
     assert.equal(callerDeliveryDate(order, false), 4);
   });
 
-  it('for ME order', async function() {
+  it('for NH order', async function() {
     const order = {
-      deliveryState: 'ME',
+      deliveryState: 'NH',
       placedOn: {
         plusDays: function(day) { return day; }
       }
     };
 
+    assert.equal(callerDeliveryDate(order, true), 3);
     assert.equal(callerDeliveryDate(order, false), 5);
   });
 
