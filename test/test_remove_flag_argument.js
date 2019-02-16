@@ -15,4 +15,15 @@ describe('delivery_date_test', async function() {
     assert.equal(callerDeliveryDate(order, false), 6);
   });
 
+  it('for MA order', async function() {
+    const order = {
+      deliveryState: 'MA',
+      placedOn: {
+        plusDays: function(day) { return day; }
+      }
+    };
+
+    assert.equal(callerDeliveryDate(order, false), 4);
+  });
+
 });
