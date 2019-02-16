@@ -14,3 +14,5 @@ function alertForMiscreant (people) {
   }
   return "";
 }
+
+module.exports = alertForMiscreant;
