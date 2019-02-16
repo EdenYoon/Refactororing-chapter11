@@ -1,0 +1,11 @@
+{
+  "name": "Refactororing-chapter11",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Jihyun Yoon <yolha79@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
+}
