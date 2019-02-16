@@ -5,12 +5,14 @@ let assert = require('assert');
 describe('delivery_date_test', async function() {
 
   it('for empty order', async function() {
-    assert.equal(callerDeliveryDate({
+    const order = {
       deliveryState: '',
       placedOn: {
         plusDays: function(day) {}
       }
-    }, false), null);
+    };
+
+    assert.equal(callerDeliveryDate(order, false), null);
   })
 
 });
