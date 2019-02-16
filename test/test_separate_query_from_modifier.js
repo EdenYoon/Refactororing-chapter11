@@ -1,23 +1,23 @@
-let alertForMiscreant = require('../src/separate_query_from_modifier');
+let callerAlertForMiscreant = require('../src/separate_query_from_modifier');
 let assert = require('assert');
 
 
 describe('alert_for_miscreant', async function() {
 
   it('for empty people', async function() {
-    assert.equal(alertForMiscreant([]), '');
+    assert.equal(callerAlertForMiscreant([]), '');
   })
 
   it('for single person', async function() {
-    assert.equal(alertForMiscreant(['Don']), 'Don');
-    assert.equal(alertForMiscreant(['John']), 'John');
-    assert.equal(alertForMiscreant(['Gyehong']), '');
+    assert.equal(callerAlertForMiscreant(['Don']), 'Don');
+    assert.equal(callerAlertForMiscreant(['John']), 'John');
+    assert.equal(callerAlertForMiscreant(['Gyehong']), '');
   })
 
   it('for people', async function() {
-    assert.equal(alertForMiscreant(['Don', 'John']), 'Don');
-    assert.equal(alertForMiscreant(['John', 'Don']), 'John');
-    assert.equal(alertForMiscreant(['Gyehong', 'John', 'Don']), 'John');
+    assert.equal(callerAlertForMiscreant(['Don', 'John']), 'Don');
+    assert.equal(callerAlertForMiscreant(['John', 'Don']), 'John');
+    assert.equal(callerAlertForMiscreant(['Gyehong', 'John', 'Don']), 'John');
   })
 
 });

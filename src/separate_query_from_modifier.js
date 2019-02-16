@@ -27,4 +27,9 @@ function alertForMiscreant (people) {
   return "";
 }
 
-module.exports = alertForMiscreant;
+function callerAlertForMiscreant (people) {
+  const found = alertForMiscreant(people);
+  return found;
+}
+
+module.exports = callerAlertForMiscreant;
