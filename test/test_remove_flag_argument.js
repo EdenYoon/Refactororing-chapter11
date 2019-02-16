@@ -8,11 +8,11 @@ describe('delivery_date_test', async function() {
     const order = {
       deliveryState: '',
       placedOn: {
-        plusDays: function(day) {}
+        plusDays: function(day) { return day; }
       }
     };
 
-    assert.equal(callerDeliveryDate(order, false), null);
-  })
+    assert.equal(callerDeliveryDate(order, false), 6);
+  });
 
 });
