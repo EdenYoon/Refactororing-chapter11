@@ -18,4 +18,18 @@ describe('score_test', async function() {
     assert.equal(callerScore(candidate, medicalExam, scoringGuide), 0);
   });
 
+  it('for positive arguments', async function() {
+    let candidate = {
+      originState: 'true'
+    };
+    let medicalExam = {
+      isSmoker: true
+    };
+    let scoringGuide = {
+      stateWithLowCertification: function (state) { return state; }
+    };
+
+    assert.equal(callerScore(candidate, medicalExam, scoringGuide), -10);
+  });
+
 });
