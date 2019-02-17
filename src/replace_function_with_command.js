@@ -3,6 +3,7 @@ function score(candidate, medicalExam, scoringGuide) {
 }
 
 class Scorer {
+
   constructor(candidate, medicalExam, scoringGuide){
     this._candidate = candidate;
     this._medicalExam = medicalExam;
@@ -14,10 +15,7 @@ class Scorer {
     this._healthLevel = 0;
     this._highMedicalRiskFlag = false;
 
-    if (this._medicalExam.isSmoker) {
-      this._healthLevel += 10;
-      this._highMedicalRiskFlag = true;
-    }
+    this.scoreSmoking();
     this._certificationGrade = "regular";
     if (this._scoringGuide.stateWithLowCertification(this._candidate.originState)) {
       this._certificationGrade = "low";
@@ -27,6 +25,14 @@ class Scorer {
     this._result -= Math.max(this._healthLevel - 5, 0);
     return this._result;
   }
+
+  scoreSmoking() {
+    if (this._medicalExam.isSmoker) {
+      this._healthLevel += 10;
+      this._highMedicalRiskFlag = true;
+    }
+  }
+
 }
 
 function callerScore(candidate, medicalExam, scoringGuide) {
