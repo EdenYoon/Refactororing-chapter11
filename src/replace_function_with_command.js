@@ -16,3 +16,9 @@ function score(candidate, medicalExam, scoringGuide) {
   result -= Math.max(healthLevel - 5, 0);
   return result;
 }
+
+function callerScore(candidate, medicalExam, scoringGuide) {
+  return score(candidate, medicalExam, scoringGuide);
+}
+
+module.exports = callerScore;
